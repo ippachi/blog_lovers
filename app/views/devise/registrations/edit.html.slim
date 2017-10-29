@@ -6,6 +6,7 @@ h2
   = f.input :email
   = f.simple_fields_for :profile do |profile|
     = profile.input :name
+    = profile.input :bio
   = f.button :submit
 h3
   | Cancel my account
