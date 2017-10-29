@@ -33,6 +33,16 @@ RSpec.describe User, type: :model do
       it { is_expected.to be false }
     end
 
+    context 'email is duplicate' do
+      before do
+        user.save
+        @user = user.dup
+      end
+      it 'should be invalid' do
+        expect(@user.save).to be false
+      end
+    end
+
     context 'password is empty' do
       before { user.password = '' }
       it { is_expected.to be false }
