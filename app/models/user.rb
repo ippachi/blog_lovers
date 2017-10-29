@@ -15,6 +15,7 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  screen_name            :string           not null
 #
 
 class User < ApplicationRecord
@@ -23,5 +24,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :articles
+  has_many :articles, dependent: :destroy
+  has_one :profile, dependent: :destroy
 end
