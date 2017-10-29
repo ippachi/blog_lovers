@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20171029023900) do
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.boolean "publish_status"
+    t.string "title", null: false
+    t.text "content", null: false
+    t.boolean "publish_status", default: true, null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
