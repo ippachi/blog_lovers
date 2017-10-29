@@ -28,4 +28,13 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
 
   accepts_nested_attributes_for :profile
+
+  delegate \
+    :name,
+    :bio,
+    to: :profile
+
+  def to_param
+    screen_name
+  end
 end
