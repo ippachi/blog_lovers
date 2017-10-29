@@ -12,8 +12,11 @@
 
 FactoryBot.define do
   factory :profile do
-    name "MyString"
-    bio "MyString"
-    user nil
+    name 'name'
+    bio 'bio'
+
+    trait :with_user do
+      association :user, factory: :user
+    end
   end
 end

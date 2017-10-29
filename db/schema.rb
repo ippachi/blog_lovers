@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20171029114223) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "name"
-    t.string "bio"
+    t.string "name", default: "", null: false
+    t.string "bio", default: "", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

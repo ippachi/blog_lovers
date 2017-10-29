@@ -31,5 +31,11 @@ FactoryBot.define do
         user.articles << FactoryBot.build(:article)
       end
     end
+
+    trait :with_profile do
+      after :build do |user|
+        user.profile = FactoryBot.build(:profile)
+      end
+    end
   end
 end

@@ -49,4 +49,16 @@ RSpec.describe User, type: :model do
       it { is_expected.to be false }
     end
   end
+
+  describe 'user_articles' do
+    let(:user) { build(:user, :with_articles) }
+    subject { user.articles }
+    it { is_expected.to_not be_empty }
+  end
+
+  describe 'user_profile' do
+    let(:user) { build(:user, :with_profile) }
+    subject { user.profile }
+    it { is_expected.to_not be_nil }
+  end
 end
