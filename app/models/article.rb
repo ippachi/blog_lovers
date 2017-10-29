@@ -13,4 +13,7 @@
 
 class Article < ApplicationRecord
   belongs_to :user
+
+  validates_presence_of :title, :content
+  validates :publish_status, inclusion: { in: [true, false] }
 end

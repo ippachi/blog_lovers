@@ -20,5 +20,22 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'registration' do
+    let(:user) { build(:user) }
+    subject { user.save }
+
+    context 'valid' do
+      it { is_expected.to be true }
+    end
+
+    context 'email is empty' do
+      before { user.email = '' }
+      it { is_expected.to be false }
+    end
+
+    context 'password is empty' do
+      before { user.password = '' }
+      it { is_expected.to be false }
+    end
+  end
 end
