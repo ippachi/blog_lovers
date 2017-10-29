@@ -20,6 +20,7 @@
 FactoryBot.define do
   factory :user do
     email 'test@example.com'
+    screen_name 'test_name'
     password 'password'
 
     trait :with_articles do
