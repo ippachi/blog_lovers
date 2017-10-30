@@ -18,21 +18,21 @@ RSpec.describe Article, type: :model do
     let(:article) { build(:article, :with_user) }
     subject { article.save }
 
-    context 'valid' do
+    context 'when it is valid' do
       it { is_expected.to be true }
     end
 
-    context 'title is empty' do
+    context 'when title is empty' do
       before { article.title = '' }
       it { is_expected.to be false }
     end
 
-    context 'content is empty' do
+    context 'when content is empty' do
       before { article.content = '' }
       it { is_expected.to be false }
     end
 
-    context 'user is not exist' do
+    context 'when user is not exist' do
       before { article.user = nil }
       it { is_expected.to be false }
     end
