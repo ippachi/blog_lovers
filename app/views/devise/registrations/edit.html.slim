@@ -7,6 +7,7 @@ h2
   = f.simple_fields_for :profile do |profile|
     = profile.input :name
     = profile.input :bio
+    = profile.input :avatar, as: :file
   = f.button :submit
 h3
   | Cancel my account

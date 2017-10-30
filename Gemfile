@@ -21,6 +21,7 @@ gem 'annotate'
 gem 'pry-rails'
 gem 'simple_form'
 gem 'webpacker'
+gem 'paperclip'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
