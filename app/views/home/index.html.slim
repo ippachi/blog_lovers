@@ -2,6 +2,7 @@
   p = link_to 'log out', destroy_user_session_path, method: :delete
   p = link_to 'edit', edit_user_registration_path
   p = link_to 'profile', user_path(current_user)
+  p = link_to 'articles', user_articles_path(current_user)
 - else
   p = link_to  'sign in', new_user_session_path
   p = link_to  'sign up', new_user_registration_path
