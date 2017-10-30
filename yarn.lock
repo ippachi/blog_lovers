@@ -4783,6 +4783,10 @@ spdy@^3.4.1:
     select-hose "^2.0.0"
     spdy-transport "^2.0.18"
 
+spectre.css@^0.4.5:
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/spectre.css/-/spectre.css-0.4.5.tgz#6d93e4021983276b19ef84b256d1fbd57a59fd7d"
+
 sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
