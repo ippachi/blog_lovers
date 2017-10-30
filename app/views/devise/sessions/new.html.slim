@@ -1,12 +1,16 @@
-h2
-  | Log in
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  = f.input :email
-  = f.input :password
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.container.mt-10
+  .columns
+    .column.col-8.col-mx-auto.clearfix
+      h2
+        | Log in
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form-group
+          = f.input :email, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }
+        .form-group
+          = f.input :password, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }
+        - if devise_mapping.rememberable?
+          .form-group
+            = f.input :remember_me, as: :boolean, label: '<i class="form-icon"></i>Remember me'.html_safe, label_html: { class: 'form-checkbox' }
+        .actions.mt-6
+          = f.button :submit
+      = render "devise/shared/links"
