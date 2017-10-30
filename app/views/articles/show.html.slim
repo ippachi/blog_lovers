@@ -1,2 +1,19 @@
-p = @article.title
-p = @article.content
+.container.mt-10
+  .columns
+    .column.col-8.col-mx-auto
+      .columns
+        .column.col-8
+          .panel
+            .panel-header
+              .panel-title
+                h3 = @article.title
+              hr
+              .panel-body
+                = @article.content
+        .column.col-4
+          .panel
+            .panel-header
+              .panel-title
+                | comments
+              hr
+              .panel-body
