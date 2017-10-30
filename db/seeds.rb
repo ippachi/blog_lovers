@@ -10,6 +10,6 @@
   user = User.create(email: "user#{i}@example.com", screen_name: "name#{i}", password: 'password')
   user.create_profile
   5.times do |j|
-    Article.create(title: "#{user.email}:title#{j}", content: "#{user.email}:title#{j}", user_id: user.id)
+    Article.create(title: "#{user.email}:title#{j}", content: "#{user.email}:content#{j}", user_id: user.id)
   end
 end
