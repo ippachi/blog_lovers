@@ -1,17 +1,26 @@
-h2
-  | Edit
-  = resource_name.to_s.humanize
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = devise_error_messages!
-  = f.input :email
-  = f.simple_fields_for :profile do |profile|
-    = profile.input :name
-    = profile.input :bio
-    = profile.input :avatar, as: :file
-  = f.button :submit
-h3
-  | Cancel my account
-p
-  | Unhappy?
-  = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
-= link_to "Back", :back
+.container.mt-10
+  .columns
+    .column.col-8.col-mx-auto.clearfix
+      h2
+        | Edit
+        = resource_name.to_s.humanize
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        = devise_error_messages!
+        .form-group
+          = f.input :email, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }
+        = f.simple_fields_for :profile do |profile|
+          .form-group
+            = profile.input :name, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }
+          .form-group
+            = profile.input :bio, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }
+          .form-group
+            = profile.input :avatar, as: :file, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }
+        .actions.mt-6
+          = f.button :submit
+      .account-cancel.mt-6
+      h3
+        | Cancel my account
+      p
+        | Unhappy?
+        = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn'
+      = link_to "Back", :back
