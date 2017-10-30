@@ -25,28 +25,40 @@ RSpec.describe User, type: :model do
     let(:user) { build(:user) }
     subject { user.save }
 
-    context 'valid' do
+    context 'when it is valid' do
       it { is_expected.to be true }
     end
 
-    context 'email is empty' do
+    context 'when email is empty' do
       before { user.email = '' }
       it { is_expected.to be false }
     end
 
-    context 'email is duplicate' do
+    context 'when email is duplicate' do
       before do
         user.save
         @user = user.dup
+        @user.screen_name = 'other'
       end
       it 'should be invalid' do
         expect(@user.save).to be false
       end
     end
 
-    context 'password is empty' do
+    context 'when password is empty' do
       before { user.password = '' }
       it { is_expected.to be false }
+    end
+
+    context 'when screen name is duplicatate' do
+      before do
+        user.save
+        @user = user.dup
+        @user.email = 'other'
+      end
+      it 'should be invalid' do
+        expect(@user.save).to be false
+      end
     end
   end
 

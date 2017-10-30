@@ -27,6 +27,8 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_one :profile, dependent: :destroy
 
+  validates :screen_name, presence: true, uniqueness: true
+
   accepts_nested_attributes_for :profile
 
   delegate \
