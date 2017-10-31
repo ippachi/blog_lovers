@@ -1,19 +1,16 @@
-.container.mt-10
-  .columns
-    .column.col-8.col-mx-auto.clearfix
-      h2
-        | Sign up
-      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = devise_error_messages!
-        .form-group
-          = f.input :email, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }
-        .form-group
-          = f.input :screen_name, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }, required: false
-        .form-group
-          = f.input :password, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }
-        .form-group
-          = f.input :password_confirmation, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }
-        .actions.mt-6
-          = f.button :submit
-          .float-right
-            = render "devise/shared/links"
+h2
+  | Sign up
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  .form-group
+    = f.input :email, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }
+  .form-group
+    = f.input :screen_name, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }, required: false
+  .form-group
+    = f.input :password, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }
+  .form-group
+    = f.input :password_confirmation, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }
+  .actions.mt-6
+    = f.button :submit
+    .float-right
+      = render "devise/shared/links"

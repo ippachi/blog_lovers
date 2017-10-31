@@ -1,29 +1,26 @@
 - breadcrumb :article, @user, @article
-.container.mt-10
-  .columns
-    .column.col-8.col-mx-auto
-      .columns
-        .column.col-8
-          .panel
-            .panel-header
-              .panel-title
-                h3 = @article.title
-            .divider
-            .panel-body
-              = @article.content
-        .column.col-4
-          .panel
-            .panel-header
-              | Writer
-              .divider
-            .panel-body
-              .my-2.text-center
-                = link_to user_path(@user) do
-                  = image_tag @user.profile.avatar.url(:thumb), class: 'avatar'
-                  = @user.screen_name
-          .panel.mt-2
-            .panel-header
-              .panel-title
-                | comments
-              .divider
-            .panel-body
+.columns
+  .column.col-8
+    .panel
+      .panel-header
+        .panel-title
+          h3 = @article.title
+      .divider
+      .panel-body
+        = @article.content
+  .column.col-4
+    .panel
+      .panel-header
+        | Writer
+        .divider
+      .panel-body
+        .my-2.text-center
+          = link_to user_path(@user) do
+            = image_tag @user.profile.avatar.url(:thumb), class: 'avatar'
+            = @user.screen_name
+    .panel.mt-2
+      .panel-header
+        .panel-title
+          | comments
+        .divider
+      .panel-body

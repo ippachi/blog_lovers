@@ -27,12 +27,16 @@ html
                 - else
                   = link_to 'Sign up', new_user_registration_path, class: 'btn btn-link'
                   = link_to 'Sign in', new_user_session_path, class: 'btn btn-link'
+    .divider
     nav.mt-10
       .container
         .columns
           .column.col-ml-auto.col-11
             == breadcrumbs
     main
-      = yield
+      .container.mt-10
+        .columns
+          .column.col-8.col-mx-auto.clearfix
+            = yield
 
   = javascript_pack_tag 'application'

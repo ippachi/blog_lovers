@@ -1,4 +1,9 @@
+h2
+  | New Article
 = simple_form_for([current_user, @article]) do |f|
-  p = f.input :title
-  p = f.input :content
-  = f.button :submit
+  .form-group
+    = f.input :title, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }, required: false
+  .form-group
+    = f.input :content, label_html: { class: 'form-label' }, input_html: { class: 'form-input', rows: 30 }, required: false
+  .actions.mt-6
+    = f.button :submit
