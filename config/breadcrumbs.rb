@@ -7,6 +7,16 @@ crumb :profile do |user|
   parent :root
 end
 
+crumb :articles do |user|
+  link "#{user.screen_name}\'s articles", user_articles_path(user)
+  parent :profile, user
+end
+
+crumb :article do |user, article|
+  link article.title, user_article_path(user, article)
+  parent :articles, user
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
