@@ -1,5 +1,21 @@
 - breadcrumb :profile, @user
 .container.mt-10
   .columns
-    .column.col-8.col-mx-auto.clearfix
-      = @user.screen_name
+    .column.col-6.col-mx-auto.clearfix
+      .columns
+        .column.col-6.mt-6
+          = image_tag @user.profile.avatar.url(:thumb), class: 'avatar avatar-xl'
+          h4.d-inline.mx-2 = @user.screen_name
+        .column.col06
+          .panel
+            .panel-header
+              .panel-title
+                | newly articles
+            .divider
+            .panel-body
+              - @user.articles.first(5).each do |article|
+                .mt-6
+                  = link_to article.title, user_article_path(@user, article)
+                .divider
+            .panel-footer
+              = link_to 'more', user_articles_path(@user)
