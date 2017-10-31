@@ -1,5 +1,3 @@
-h2
-  | New Article
 = simple_form_for([current_user, @article]) do |f|
   .form-group
     = f.input :title, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }, required: false
