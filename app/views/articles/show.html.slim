@@ -32,7 +32,12 @@
   .modal-container
     .modal-header
       button.btn.btn-clear.float-right
-      h5.modal-title Modal title
+      h5.modal-title New comment
     .modal-body
       .content
-        | adsf
+        = simple_form_for(@comment) do |f|
+          .form-group
+            = f.input :content, label_html: { class: 'form-label' }, input_html: { class: 'form-input' }
+          = f.input :article_id, as: :hidden, input_html: { value: @article.id }
+          .mt-2
+            = f.button :submit

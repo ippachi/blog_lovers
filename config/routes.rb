@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show], param: :screen_name do
     resources :articles
   end
+
+  resources :comments, only: [:create, :destroy, :edit]
 end

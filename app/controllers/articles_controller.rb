@@ -9,6 +9,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article = @user.articles.find(params[:id])
+    @comments = @article.comments
+    @comment = @comments.build
   end
 
   def new
