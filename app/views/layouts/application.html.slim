@@ -27,6 +27,11 @@ html
                 - else
                   = link_to 'Sign up', new_user_registration_path, class: 'btn btn-link'
                   = link_to 'Sign in', new_user_session_path, class: 'btn btn-link'
+    nav.mt-10
+      .container
+        .columns
+          .column.col-ml-auto.col-11
+            == breadcrumbs
     main
       = yield
 

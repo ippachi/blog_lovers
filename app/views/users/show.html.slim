@@ -1,4 +1,5 @@
-p = @user.screen_name
-p = @user.name
-p = @user.bio
-= image_tag @user.profile.avatar.url(:medium)
+- breadcrumb :profile, @user
+.container.mt-10
+  .columns
+    .column.col-8.col-mx-auto.clearfix
+      = @user.screen_name
