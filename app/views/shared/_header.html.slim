@@ -1,0 +1,14 @@
+.container
+  .columns
+    .column.col-10.col-mx-auto
+      .navbar
+        section.navbar-section
+          = link_to 'Blog Lover', root_path, class: 'navbar-brand'
+        section.navbar-section
+          - if user_signed_in?
+            = link_to 'My Articles', user_articles_path(current_user), class: 'btn btn-link'
+            = link_to 'Profile', user_path(current_user), class: 'btn btn-link'
+            = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-link'
+          - else
+            = link_to 'Sign up', new_user_registration_path, class: 'btn btn-link'
+            = link_to 'Sign in', new_user_session_path, class: 'btn btn-link'

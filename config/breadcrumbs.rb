@@ -17,6 +17,16 @@ crumb :article do |user, article|
   parent :articles, user
 end
 
+crumb :new_article do |user|
+  link 'New article', user_articles_path(user)
+  parent :articles, user
+end
+
+crumb :edit_article do |user, article|
+  link 'Edit article', edit_user_article_path(user, article)
+  parent :articles, user
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
