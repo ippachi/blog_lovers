@@ -1,3 +1,3 @@
 # README
 
-This is a simple blog application
+This is a simple blog application thet editable as markdown
