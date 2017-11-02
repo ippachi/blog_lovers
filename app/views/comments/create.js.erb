@@ -1,0 +1,2 @@
+$('#new-comment-modal').removeClass('active')
+$('#comment-list').html('<%= escape_javascript(render "articles/comments", comments: @comments) %>')
