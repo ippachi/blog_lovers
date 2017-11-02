@@ -55,4 +55,7 @@ class ArticlesController < ApplicationController
   def set_current_user_article
     @article = current_user.articles.find(params[:id])
   end
+
+  def markdown_to_html
+  end
 end

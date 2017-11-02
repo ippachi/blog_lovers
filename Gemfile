@@ -25,6 +25,7 @@ gem 'paperclip'
 gem 'faker'
 gem 'gretel'
 gem 'jquery-rails'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

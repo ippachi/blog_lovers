@@ -17,4 +17,9 @@ class Article < ApplicationRecord
 
   validates_presence_of :title, :content
   validates :publish_status, inclusion: { in: [true, false] }
+
+  def content_to_html
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    markdown.render(content)
+  end
 end

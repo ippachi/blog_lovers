@@ -7,7 +7,7 @@
           h3 = @article.title
       .divider
       .panel-body
-        = @article.content
+        == @article.content_to_html
   .column.col-4
     .panel
       .panel-header
