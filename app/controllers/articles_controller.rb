@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to user_articles_path(current_user)
+    redirect_to user_articles_url(current_user)
   end
 
   private

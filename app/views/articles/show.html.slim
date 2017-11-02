@@ -3,7 +3,13 @@
   .column.col-8
     .panel
       .panel-header
-        .panel-title
+        .panel-title.clearfix
+          - if current_user == @user
+            .float-right.mt-1
+              = link_to edit_user_article_path(current_user, @article), class: 'mx-2' do
+                i.icon.icon-edit
+              = link_to user_article_path(current_user, @article), method: :delete, data: { confirm: 'Are you sure?' } do
+                i.icon.icon-delete
           h3 = @article.title
       .divider
       .panel-body
