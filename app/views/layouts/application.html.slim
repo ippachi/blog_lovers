@@ -8,11 +8,8 @@ html
     = stylesheet_pack_tag 'application'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    p.notice
-      = notice
-    p.alert
-      = alert
-    header.header
+
+    header.header.mt-6
       == render 'shared/header'
     .divider
 
